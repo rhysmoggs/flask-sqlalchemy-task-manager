@@ -54,7 +54,6 @@ def add_task():
             due_date=request.form.get("due_date"),
             category_id=request.form.get("category_id")
         )
-        category = Category(category_name=request.form.get("category_name"))
         db.session.add(task)
         db.session.commit()
         return redirect(url_for("home"))
@@ -81,3 +80,4 @@ def delete_task(task_id):
     db.session.delete(task)
     db.session.commit()
     return redirect(url_for("home"))
+    
